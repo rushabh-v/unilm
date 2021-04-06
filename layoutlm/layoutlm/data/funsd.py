@@ -231,7 +231,7 @@ def convert_examples_to_features(
     """
 
     label_map = {label: i for i, label in enumerate(label_list)}
-
+    print(label_map, max_seq_length)
     features = []
     for (ex_index, example) in enumerate(examples):
         file_name = example.file_name
