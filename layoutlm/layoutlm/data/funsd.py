@@ -329,7 +329,6 @@ def convert_examples_to_features(
             label_ids += [pad_token_label_id] * padding_length
             token_boxes += [pad_token_box] * padding_length
         
-        print(label_ids, len(input_ids), len(input_mask), len(segment_ids), len(label_ids), len(token_boxes), max_seq_length)
         assert len(input_ids) == max_seq_length
         assert len(input_mask) == max_seq_length
         assert len(segment_ids) == max_seq_length
