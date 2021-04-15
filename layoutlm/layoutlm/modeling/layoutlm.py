@@ -226,7 +226,7 @@ class LayoutlmForTokenClassification(BertPreTrainedModel):
             2:
         ]  # add hidden states and attention if they are here
         if labels is not None:
-            loss_fct = CrossEntropyLoss()
+            loss_fct = CrossEntropyLoss(weight=torch.tensor([0.99, 0.01]))
             # Only keep active parts of the loss
             if attention_mask is not None:
                 active_loss = attention_mask.view(-1) == 1
