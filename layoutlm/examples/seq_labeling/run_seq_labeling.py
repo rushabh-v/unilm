@@ -379,7 +379,7 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, mode, prefix=""
         "loss": eval_loss,
         "precision": precision_score(out_label_list, preds_list),
         "recall": recall_score(out_label_list, preds_list),
-        "f1": f1_score(out_label_list, preds_list, sample_weight=[1, 0]),
+        "f1": f1_score(out_label_list, preds_list),
     }
 
     report = classification_report(out_label_list, preds_list)
